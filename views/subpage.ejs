@@ -14,6 +14,7 @@
         <%= result.title %>
     </title>
     <%- include ('./partials/style-telegram'); %>
+        <%- include ('./partials/ads.ejs'); %>
 </head>
 
 <body>
@@ -22,6 +23,11 @@
         Download <%= result.title %> <br>
             <sub>From: Oh My Telegram Channel</sub>
     </header>
+
+    <div class="ads aads">
+        <iframe data-aa="1769092" src="//ad.a-ads.com/1769092?size=300x250"
+            style="width:300px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;"></iframe>
+    </div>
 
     <div class="container">
         <div class="title">
@@ -42,18 +48,32 @@
             </div>
         </div>
         <div class="button">
-            <button onclick="window.open('result.link', '_self')" id="shadow">DOWNLOAD - <span
-                    id="count"></span>s</button>
-            <button onclick="window.open('result.link', '_self')" id="real">DOWNLOAD NOW</button>
+            <button id="shadow">DOWNLOAD - <span id="count"></span>s</button>
+            <button onclick="window.open('<%= result.link %>', '_self')" id="real">DOWNLOAD NOW</button>
             <br> <br>
             <sub id="inst"><i>⚠ click above to download... On the telegram Bot click <b>START</b></i></sub>
         </div>
     </div>
     <br>
-    <div class="tangazo">
-        <!-- lksjfsdfjkls -->
+    <div class="ads adsterra250">
+        <script type="text/javascript">
+            atOptions = {
+                'key': 'c555b7e4c621abc8f98ec2dba9be485e',
+                'format': 'iframe',
+                'height': 250,
+                'width': 300,
+                'params': {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://lectureolympics.com/c555b7e4c621abc8f98ec2dba9be485e/invoke.js"></scr' + 'ipt>');
+        </script> <br>
+        <hr> <br>
+        <div class="adsterraNative">
+            <script async="async" data-cfasync="false"
+                src="//lectureolympics.com/1315bd0c8cd301a706bd16e6d4f60c48/invoke.js"></script>
+            <div id="container-1315bd0c8cd301a706bd16e6d4f60c48"></div>
+        </div>
     </div>
-    <br><br><br>
+    <br><br><br><br>
 
     <footer>
         Shared With ❤ Oh My Telegram Channel Admin <br>
@@ -67,6 +87,10 @@
     <!-- javascript -->
     <%- include('./partials/tarehe'); %>
         <%- include('./partials/wait'); %>
+
+            <!-- social bar adsterra -->
+            <script type='text/javascript'
+                src='//lectureolympics.com/75/a8/02/75a8029abc04ba2542c2c9bd62a26869.js'></script>
 </body>
 
 </html>

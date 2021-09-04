@@ -8,9 +8,9 @@ let USER = process.env.USER
 let PASS = process.env.PASS
 
 const app = express()
-mongoose.connect(`mongodb+srv://${USER}:${PASS}@nodetuts.ngo9k.mongodb.net/ohmy2?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("Database: ohmy2, connected successfully"))
-    .catch((err) => console.log(err))
+mongoose.connect(`mongodb+srv://${USER}:${PASS}@nodetuts.ngo9k.mongodb.net/ohmy2?retryWrites=true&w=majority`).then(() => {
+    console.log('Connected to ohmy2 database')
+}).catch((err) => console.log(err))
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }))

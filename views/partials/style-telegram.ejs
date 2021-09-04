@@ -60,7 +60,7 @@
         background-color: aliceblue;
         height: 270px;
         width: 325px;
-        border: lightgray solid 2px;
+        border: black solid 2px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -117,8 +117,8 @@
 
     .container .button button {
         font-size: large;
-        font-weight: bold;
-        padding: 12px 24px;
+        font-weight: bolder;
+        padding: 14px 6px;
         border-radius: 16px;
         text-align: center;
         width: 250px;
@@ -131,6 +131,11 @@
         background-color: #33d684;
         color: white;
         display: none;
+    }
+
+    .container .button #real:active,
+    .container .button #real:hover {
+        background-color: black;
     }
 
     .container .button #shadow {

@@ -1,0 +1,22 @@
+<script>
+    var real = document.getElementById('real')
+    var shadow = document.getElementById('shadow')
+    var count = document.getElementById('count')
+    var inst = document.getElementById('inst')
+
+    const wait = () => {
+        let startTime = 10
+        let interval = setInterval(() => {
+            startTime--
+            count.innerHTML = startTime
+
+            if (startTime == 0) {
+                shadow.style.display = 'none'
+                real.style.display = 'block'
+                inst.style.display = 'block'
+                clearInterval(interval)
+            }
+        }, 1000)
+    }
+    wait()
+</script>

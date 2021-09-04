@@ -1,9 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const router = require('./routes/route')
+const credentials = require('./credentials.json')
 
 const app = express()
-mongoose.connect('mongodb+srv://shemdoe:Shemdoe0666@nodetuts.ngo9k.mongodb.net/ohmy2?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI || credentials.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Database: ohmy2, connected successfully"))
     .catch((err) => console.log(err.message))
 

@@ -26,6 +26,7 @@ router.post('/post', (req, res) => {
     let title = req.body.title
     let link = req.body.link
     let modifiedLInk = link.replace(/\?start=/g, '&start=')
+        .replace(/https:\/\/t.me\//g, 'tg://resolve?domain=')
 
     ohmyModel.create({
         id,

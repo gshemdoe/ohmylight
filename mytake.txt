@@ -1,0 +1,6 @@
+DELETE ALL DOCS IN COLLECTION
+router.get('/delete', (req, res) => {
+    ohmyModel.deleteMany().all().then(deleted => {
+        console.log('deleted')
+    })
+})

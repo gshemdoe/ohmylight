@@ -1,29 +1,27 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const ohmySchema = new Schema({
-    title: {
-        type: String,
-        required: true,
+const tgSchema = new Schema({
+    uniqueId: {
+        type: String
     },
-    link: {
-        type: String,
-        required: true,
-        unique: true
+    fileId: {
+        type: String
     },
-    id: {
+    fileType: {
         type: String,
-        required: true,
-        unique: true
     },
-    originalLInk: {
+    caption: {
+        type: String
+    },
+    caption_entities: {
+        type: Array
+    },
+    nano: {
         type: String,
-        required: true,
-        unique: true
     }
-},
-    { timestamps: true, strict: false },
-)
 
-const model = mongoose.model('ohmyModel', ohmySchema)
-module.exports = model
+}, { timestamps: true })
+
+const tgModel = mongoose.model('tgDb', tgSchema)
+module.exports = tgModel

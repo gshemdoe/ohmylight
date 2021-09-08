@@ -8,8 +8,8 @@ let USER = process.env.USER
 let PASS = process.env.PASS
 
 const app = express()
-mongoose.connect(`mongodb+srv://${USER}:${PASS}@nodetuts.ngo9k.mongodb.net/ohmy2?retryWrites=true&w=majority`).then(() => {
-    console.log('Connected to ohmy2 database')
+mongoose.connect(`mongodb+srv://${USER}:${PASS}@nodetuts.ngo9k.mongodb.net/ohmyNew?retryWrites=true&w=majority`).then(() => {
+    console.log('Connected to ohmyNew database')
 }).catch((err) => console.log(err.message))
 
 app.set('view engine', 'ejs')

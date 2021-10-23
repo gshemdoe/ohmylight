@@ -146,7 +146,8 @@
     <script>
         function autoOpen() {
             setTimeout(() => {
-                window.open('tg://resolve?domain=ohmychannelbot&start=<%= result.nano %>')
+                let tgwindow = window.open('tg://resolve?domain=ohmychannelbot&start=<%= result.nano %>')
+                tgwindow.document.write('<b>Redirecting to Telegram App....</b>')
             }, 5000)
         }
         autoOpen()

@@ -58,10 +58,9 @@
         </div>
         <div class="button">
             <button id="shadow">DOWNLOAD - <span id="count"></span>s</button>
-            <button onclick="window.open('tg://resolve?domain=ohmychannelbot&start=<%= result.nano %>', '_self')"
-                id="real">DOWNLOAD NOW</button>
+            <button onclick="window.open('/telegram/<%= result.nano %>')" id="real">DOWNLOAD NOW</button>
             <br> <br>
-            <sub id="inst"><i>⚠ click above to download... On the telegram Bot click <b>START</b></i></sub>
+            <sub id="inst"><i>⚠ click above to continue</i></sub>
         </div>
     </div>
     <br>

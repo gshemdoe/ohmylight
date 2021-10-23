@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" />
+    <title>Telegram Files</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: white;
+            width: 100%;
+        }
+
+        .telegramWrapper {
+            display: flex;
+            width: 100%;
+            padding: 16px;
+        }
+
+        .telegramWrapper .logo .fa {
+            color: dodgerblue;
+            font-size: 60px;
+        }
+
+        .telegramWrapper .title {
+            font-weight: bolder;
+            margin-left: 16px;
+            font-size: 38px;
+            margin-top: 8px;
+        }
+
+        .tryit {
+            background-color: dodgerblue;
+            width: 100%;
+            color: white;
+            text-align: center;
+            padding: 8px 6px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .tryit a {
+            text-decoration: none;
+            color: white;
+            font-size: medium;
+        }
+
+        .logo-oh {
+            margin: 8px auto;
+            text-align: center;
+        }
+
+        .logo-oh img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 1px double black;
+        }
+
+        .button {
+            text-align: center;
+        }
+
+        .button button {
+            font-size: medium;
+            font-weight: bold;
+            color: white;
+            background-color: #33d684;
+            border: none;
+            border-radius: 48px;
+            padding: 12px 32px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .button button:hover,
+        .button button:active {
+            background-color: dodgerblue;
+            color: white;
+            outline: none;
+        }
+
+        .caption {
+            width: 80%;
+            text-align: center;
+            margin: auto;
+            padding: 8px;
+        }
+
+        @media (max-width: 450px) {
+            .telegramWrapper .logo .fa {
+                font-size: 30px;
+            }
+
+            .telegramWrapper .title {
+                font-size: 15px;
+                margin-top: 8px;
+            }
+        }
+    </style>
+    <%- include ('./partials/ads.ejs'); %>
+</head>
+
+<body>
+    <div class="telegramWrapper">
+        <div class="logo">
+            <i class="fa fa-telegram" aria-hidden="true"></i>
+        </div>
+        <div class="title">
+            Telegram
+        </div>
+    </div>
+    <div class="tryit">
+        <a href="https://telegram.org">Don't have <b>Telegram</b> yet? Try it now! <b>></b></b></a>
+    </div>
+    <br>
+    <br>
+    <div class="logo-oh">
+        <img src="https://raw.githubusercontent.com/dramastore/images/main/image.png" alt="">
+    </div>
+    <div class="caption">
+        <h4>Download <%= result.caption %>
+        </h4>
+    </div>
+    <div class="button">
+        <button onclick="window.open('tg://resolve?domain=ohmychannelbot&start=<%= result.nano %>', '_self')">OPEN
+            IN TELEGRAM</button>
+        <p style="font-size: small;"><i>⚠ click above to get the video.... In the bot click "START"</i> </p>
+    </div>
+    <br>
+    <hr><br>
+    <div class="ads aads">
+        <iframe data-aa="1776866" src="//ad.a-ads.com/1776866?size=300x250"
+            style="width:300px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;"></iframe>
+    </div>
+    <script>
+        function autoOpen() {
+            setTimeout(() => {
+                window.open('tg://resolve?domain=ohmychannelbot&start=<%= result.nano %>')
+            }, 5000)
+        }
+        autoOpen()
+    </script>
+</body>
+
+</html>

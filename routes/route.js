@@ -62,4 +62,15 @@ router.get('/ohmy/:id', (req, res) => {
     })
 })
 
+router.get('/telegram/:id', (req, res) => {
+    let id = req.params.id
+
+    ohmyModel.findOne({ nano: id }).then((result) => {
+        res.render('telegram', { result })
+    }).catch((err) => {
+        console.log(err)
+        res.send(err.message)
+    })
+})
+
 module.exports = router

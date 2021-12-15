@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= userInfo.name %> Points booster
+    </title>
+    <%- include('./partials/style.ejs'); %>
+</head>
+
+<body>
+    <header>
+        <h2>💋 OhMy Points Booster 🚀</h2>
+        <h3>Boost your video downloading points</h3>
+    </header>
+
+    <div class="ads aads">
+        <iframe data-aa="1776866" src="//ad.a-ads.com/1776866?size=300x250"
+            style="width:300px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;"></iframe>
+    </div>
+
+    <br>
+    <hr> <br>
+
+    <section class="points-body">
+        <h3 style="text-align: center;">OH MY 💋 Telegram User Status <br> BOOSTER 🚀</h3>
+        <div class="points-circle <%= (userInfo.points>=2) ? 'able' : 'not' %> ">
+            <h3 class="name" style="font-style: normal;"><b>
+                    😁 <%= userInfo.name.substring(0,16) %>
+                </b></h3>
+            <h4 class="pts-your">Your Points</h4>
+            <h1 class="pts">
+                <%= userInfo.points %> pts.
+            </h1>
+
+            <h4 class="status">
+                <%= (userInfo.points>=2) ? 'Able to get videos' : 'Not able to get videos' %>
+            </h4>
+        </div>
+        <hr style="width: 25%;">
+        <div class="boost-btn">
+            <button class="shadow">WAITING BOOST - <sub id="count">07</sub></button>
+            <button class="real"
+                onclick="window.open('/ohmy-user-add-1/<%= userInfo.unano %>/<%= userInfo.id %>', '_self')">CLICK TO
+                BOOST
+                BY
+                +1 🚀</button> <br> <br>
+            <span><i>⚠ click above to increase your points.</i></span>
+        </div>
+    </section>
+    <br>
+    <hr><br>
+    <div class="ads adsterra250">
+        <script type="text/javascript">
+            atOptions = {
+                'key': 'a3248d4c803a8513bc51223eb4eb9a9e',
+                'format': 'iframe',
+                'height': 250,
+                'width': 300,
+                'params': {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://lectureolympics.com/a3248d4c803a8513bc51223eb4eb9a9e/invoke.js"></scr' + 'ipt>');
+        </script> <br>
+        <br> <br>
+    </div>
+    <br><br><br><br><br>
+
+    <footer>
+        Shared With ❤ Oh My Telegram Channel Admin <br>
+        <a onclick="window.open('tg://join?invite=AAAAAFegjdpxSSmtSXsykg')" style="cursor: pointer;">Join Us Telegram<i
+                class="fa fa-telegram" aria-hidden="true"></i></a><br>
+        <a href="/">🏠 HOME</a> <br>
+        <span id="yaLeo2">ggg</span>
+    </footer>
+
+    <script>
+        function counting() {
+            var count = document.getElementById('count')
+            var shadow = document.querySelector('.shadow')
+            var real = document.querySelector('.real')
+
+            var ing = 7
+
+            let interval = setInterval(() => {
+                ing--
+                count.innerText = '0' + ing
+
+                if (ing == 1) {
+                    clearInterval(interval)
+                    shadow.style.display = 'none'
+                    real.style.display = 'inline-block'
+                }
+            }, 1000)
+        }
+        counting()
+    </script>
+    <%- include('../partials/tarehe'); %>
+</body>
+
+</html>

@@ -130,27 +130,27 @@ router.get('/ohmy-user-add-1/:unano/:chatid', (req, res) => {
                         }
                     }).then(() => console.log('+1 msg sent')).catch((err) => {
                         console.log(err)
-                        bot.telegram.sendMessage(741815228, err.message)
+                        bot.telegram.sendMessage(741815228, err.message + ` from ${chatid} - Website`)
                     })
                 } else if (user.points == 0) {
                     bot.telegram.sendMessage(chatid, `You increased your points by 1 and your new points balance is <b>${user.points + 1} pts</b> \n\nAdd 1 point more to be able to download the video`, { parse_mode: 'HTML' }).then(() => {
                         console.log('+1 added')
                     }).catch((err) => {
                         console.log(err)
-                        bot.telegram.sendMessage(741815228, err.message)
+                        bot.telegram.sendMessage(741815228, err.message + ` from ${chatid} - Website`)
                     })
                 } else {
                     bot.telegram.sendMessage(chatid, `You increased your points by 1 and your new points balance is <b>${user.points + 1} pts.</b>`, { parse_mode: 'HTML' }).then(() => {
                         console.log('+1 added')
                     }).catch((err) => {
                         console.log(err)
-                        bot.telegram.sendMessage(741815228, err.message)
+                        bot.telegram.sendMessage(741815228, err.message + ` from ${chatid} - Website`)
                     })
                 }
                 console.log(`${newNano} inserted as new nano for ${user.name} and point is added by 1`)
             }).catch((err) => {
                 console.log(err)
-                bot.telegram.sendMessage(741815228, err.message)
+                bot.telegram.sendMessage(741815228, err.message + ` from ${chatid} - Website`)
             })
         } else {
             res.status(400).send('<h2>Error: Bad link, user session expired</h2>')

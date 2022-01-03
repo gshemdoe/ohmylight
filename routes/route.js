@@ -4,10 +4,23 @@ const router = express.Router()
 const ohmyModel = require('../models/db')
 const usersModel = require('../models/users')
 const { Telegraf } = require('telegraf')
+const blogModel = require('../models/blog')
+const countModel = require('../models/count')
+const { nanoid } = require('nanoid')
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
 router.get('/', (req, res) => {
-    res.render('home')
+    blogModel.find().limit(6).then(async (posts) => {
+        let count = await usersModel.countDocuments()
+        let files = await ohmyModel.countDocuments()
+        countModel.findOne({}).then(doc => {
+            res.render('home', { posts, count, doc, files })
+        }).catch((err) => {
+            console.log(err)
+        })
+    }).catch((err) => {
+        console.log(err)
+    })
 })
 
 router.get('/login', (req, res) => {
@@ -25,33 +38,23 @@ router.post('/login', (req, res) => {
     }
 })
 
-// router.post('/post', (req, res) => {
-//     let id = req.body.id
-//     let title = req.body.title
-//     let link = req.body.link
-//     let modifiedLInk = link.replace(/\?start=/g, '&start=')
-//         .replace(/https:\/\/t.me\//g, 'tg://resolve?domain=')
+router.post('/post', async (req, res) => {
+    const title = req.body.title
+    const author = req.body.author
+    const picha = req.body.picha
+    const Rawbody = req.body.body
+    const body = Rawbody.replace(/\n/g, '<br>')
+    let nanoGenerate = await nanoid(5)
+    let nano = nanoGenerate
 
-//     ohmyModel.create({
-//         id,
-//         title,
-//         link: modifiedLInk,
-//         originalLInk: link
-//     }).then((doc) => {
-//         console.log('Doc Inserted Successfully')
-//         res.send(`<div style="width: 70%; margin: 16px auto;">
-//         <h3>Your post is successfully to the database</h3>
-//         <ul>
-//             <li>Original Link: ${link}</li>
-//             <li>Modified Link: ${modifiedLInk}</li>
-//             <li>Shared Link: <a href="/ohmy/${id}">Hold Here</a></li>
-//         </ul>
-//     </div>`)
-//     }).catch((err) => {
-//         console.log(err)
-//         res.send(err.message)
-//     })
-// })
+    blogModel.create({
+        title, author, picha, body, nano
+    }).then(() => res.send('Blog article posted'))
+        .catch((err) => {
+            console.log(err)
+            res.send('There was an error and post didnt posted')
+        })
+})
 
 
 

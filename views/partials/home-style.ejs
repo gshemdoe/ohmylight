@@ -1,0 +1,198 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rock+3D&family=Shizuru&display=swap');
+
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background-color: aliceblue;
+    }
+
+    header {
+        background-color: red;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 8px;
+    }
+
+    header .title {
+        font-size: large;
+        font-weight: bolder;
+        font-family: 'Rock 3D', cursive;
+    }
+
+    header .others {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header .others span {
+        margin: 0 4px;
+        background-color: aliceblue;
+        padding: 4px;
+        border-radius: 4px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    header .others span:hover,
+    header .others span:active {
+        background-color: black;
+        color: white;
+    }
+
+    .main {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 12px;
+        padding: 4px;
+        flex-wrap: wrap;
+    }
+
+    .main .left {
+        width: 70%;
+        border: black 1px solid;
+        padding: 16px 8px;
+        border-radius: 8px;
+    }
+
+    .main .right {
+        width: 25%;
+        height: fit-content;
+        border: black solid 1px;
+        padding: 16px 8px;
+        border-radius: 8px;
+    }
+
+    .main .right .infos ul {
+        list-style: none;
+    }
+
+    .main .right .infos ul li::before {
+        content: '🌎 ';
+    }
+
+    .main .right .infos ul li {
+        font-weight: bold;
+        font-size: large;
+    }
+
+    .main .left .posts {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .main .left .posts .post {
+        width: 320px;
+        height: 640px;
+        background-color: white;
+        border: 1px gray solid;
+        box-shadow: black 2px 2px 2px;
+        margin: 0 auto 8px auto;
+        cursor: pointer;
+    }
+
+    .main .left .posts .post:hover,
+    .main .left .posts .post:active {
+        width: 340px;
+        background-color: lightblue;
+    }
+
+    .main .left .posts .post .phead {
+        padding-left: 8px;
+    }
+
+    .main .left .posts .post .pbody {
+        padding: 6px;
+    }
+
+    .main .left .posts .post img {
+        width: 320px;
+        height: 240px;
+    }
+
+    footer {
+        background-color: rgb(88, 75, 75);
+        color: white;
+        padding: 16px;
+        width: 100%;
+    }
+
+    @media (min-width: 600px) {
+        header .title {
+            font-size: xx-large;
+        }
+    }
+
+    @media (max-width: 930px) and (min-width: 700px) {
+        .main {
+            display: block;
+        }
+
+        .main .left {
+            margin: 0 auto 12px auto;
+            width: 95%;
+        }
+
+        .main .right {
+            display: none;
+        }
+
+        .posts .post {
+            width: 90%;
+        }
+    }
+
+    @media (max-width: 699px) and (min-width: 500px) {
+        .main .right {
+            display: none;
+        }
+
+        .main .left {
+            width: 95%;
+            margin: 8px auto;
+        }
+    }
+
+    @media (max-width: 499px) {
+        .main {
+            flex-direction: column;
+        }
+
+        .main .left {
+            width: 95%;
+            margin: 4px auto 12px auto;
+        }
+
+        .main .right {
+            width: 95%;
+            margin: 8px auto 12px auto;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        body {
+            width: 1024px;
+            margin: 0 auto;
+            border-left: 1px gray solid;
+            border-right: 1px gray solid;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .matangazo {
+            flex-direction: column;
+        }
+    }
+
+    .matangazo {
+        display: flex;
+    }
+</style>

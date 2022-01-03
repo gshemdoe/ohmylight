@@ -5,59 +5,161 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error!</title>
-	<meta name="propeller" content="fb98a8c63b7a2b8048cbe57a9c4c5e85">
-    <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            width: 90%;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .ujumbe {
-            width: 320px;
-            margin: 8px auto;
-        }
-    </style>
-    <%- include('./partials/ads.ejs'); %>
+    <title>Oh My World</title>
+    <%- include('./partials/home-style'); %>
+        <%- include ('./partials/ads.ejs'); %>
 </head>
 
 <body>
-    <div class="a-ads ads">
-        <iframe data-aa="1776866" src="//ad.a-ads.com/1776866?size=300x250"
-            style="width:300px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;"></iframe>
-    </div>
-    <h1 class="ujumbe">
-        Website not available at this moment
-    </h1>
-    <div class="adsterraNative ads">
-        <script async="async" data-cfasync="false"
-            src="//lectureolympics.com/915b6f173a7c21d4b7733588f4fa966c/invoke.js"></script>
-        <div id="container-915b6f173a7c21d4b7733588f4fa966c"></div>
-    </div>
-    <br>
-    <hr> <br>
-    <div class="adsterra250 ads">
-        <script type="text/javascript">
-            atOptions = {
-                'key': 'a3248d4c803a8513bc51223eb4eb9a9e',
-                'format': 'iframe',
-                'height': 250,
-                'width': 300,
-                'params': {}
-            };
-            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://lectureolympics.com/a3248d4c803a8513bc51223eb4eb9a9e/invoke.js"></scr' + 'ipt>');
-        </script>
+    <header>
+        <div class="title">
+            OH MY WORLD
+        </div>
+        <div class="others">
+            <span>Sitemap</span>
+            <span>Privacies</span>
+            <span>Contacts</span>
+        </div>
+    </header>
+    <div class="main">
+        <section class="left">
+            <div class="posts">
+                <% posts.forEach(post=> { %>
+                    <div class="post">
+                        <h1 class="phead">
+                            <%= post.title %>
+                        </h1>
+                        <img src="<%= post.picha %> " alt="">
+                        <div class="pbody">
+                            <%- post.body.substring(0,500) %>...
+                        </div>
+                        <h3 style="text-align: left; color: red; font-weight: bold; padding-left: 8px;">Read More...
+                        </h3>
+                    </div>
+                    <% }) %>
+            </div>
+        </section>
+        <section class="right">
+            <div class="infos">
+                <h1>Site's Info</h1>
+                <ul>
+                    <li>Admin: shemdoe
+                    </li>
+                    <li>Website: Oh My World
+                    </li>
+                    <li>Number of posts: <%= files.toLocaleString() %>
+                    </li>
+                    <li>Active users: <%= count.toLocaleString() %>
+                    </li>
+                    <li>Page Views: <%= doc.times.toLocaleString() %>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </div>
 
-    <!-- social bar adsterra -->
-    <script type='text/javascript' src='//lectureolympics.com/b0/d9/c0/b0d9c09cd174cf19e44ebef0a0d22254.js'></script>
+    <div class="matangazo">
+        <div class="ad1 ads aads">
+            <iframe data-aa="1776866" src="//ad.a-ads.com/1776866?size=300x250"
+                style="width:300px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;"></iframe>
+        </div>
+        <div class="ad2 ads adsterra250">
+            <script type="text/javascript">
+                atOptions = {
+                    'key': 'a3248d4c803a8513bc51223eb4eb9a9e',
+                    'format': 'iframe',
+                    'height': 250,
+                    'width': 300,
+                    'params': {}
+                };
+                document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://lectureolympics.com/a3248d4c803a8513bc51223eb4eb9a9e/invoke.js"></scr' + 'ipt>');
+            </script> <br>
+            <hr> <br>
+            <div class="adsterraNative">
+                <script async="async" data-cfasync="false"
+                    src="//lectureolympics.com/915b6f173a7c21d4b7733588f4fa966c/invoke.js"></script>
+                <div id="container-915b6f173a7c21d4b7733588f4fa966c"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h2>Wildlife</h2>
+        <p>
+            <b>Wildlife</b> traditionally refers to undomesticated animal species, but has come to include all organisms
+            that grow or live
+            wild in an area without being introduced by humans.[1] Wildlife was also synonymous to game: those birds and
+            mammals
+            that were hunted for sport. Wildlife can be found in all ecosystems. Deserts, forests, rainforests, plains,
+            grasslands,
+            and other areas, including the most developed urban areas, all have distinct forms of wildlife. While the
+            term
+            in
+            popular culture usually refers to animals that are untouched by human factors, most scientists agree that
+            much
+            wildlife
+            is affected by human activities.[2] Some wildlife threaten human safety, health, property, and quality of
+            life.
+            However,
+            many wild animals, even the dangerous ones, have value to human beings. This value might be economic,
+            educational, or
+            emotional in nature.
+        </p>
+        <p>
+            Humans have historically tended to separate civilization from wildlife in a number of ways, including the
+            legal,
+            social,
+            and moral senses. Some animals, however, have adapted to suburban environments. This includes such animals
+            as
+            domesticated cats, dogs, mice, and rats. Some religions declare certain animals to be sacred, and in modern
+            times,
+            concern for the natural environment has provoked activists to protest against the exploitation of wildlife
+            for
+            human
+            benefit or entertainment.
+        </p>
+
+        <p>
+            Global wildlife populations have decreased by 68% since 1970 as a result of human activity, particularly
+            overconsumption, population growth and intensive farming, according to a 2020 World Wildlife Fund's Living
+            Planet Report
+            and the Zoological Society of London's Living Planet Index measure, which is further evidence that humans
+            have
+            unleashed
+            a sixth mass extinction event.[3][4] According to CITES, it has been estimated that annually the
+            international
+            wildlife
+            trade amounts to billions of dollars and it affects hundreds of millions of animal and plant specimen.[5]
+        </p>
+
+
+        <p>
+            <b>
+                Overkill
+            </b>
+
+            Overkill happens whenever hunting occurs at rates greater than the reproductive capacity of the population
+            is being
+            exploited. The effects of this are often noticed much more dramatically in slow growing populations such as
+            many larger
+            species of fish. Initially when a portion of a wild population is hunted, an increased availability of
+            resources (food,
+            etc.) is experienced increasing growth and reproduction as density dependent inhibition is lowered. Hunting,
+            fishing and
+            so on, has lowered the competition between members of a population. However, if this hunting continues at
+            rate greater
+            than the rate at which new members of the population can reach breeding age and produce more young, the
+            population will
+            begin to decrease in numbers.[23]
+
+            Populations that are confined to islands, whether literal islands or just areas of habitat that are
+            effectively an
+            "island" for the species concerned, have also been observed to be at greater risk of dramatic population
+            rise of deaths
+            declines following unsustainable hunting.
+        </p>
+
+    </footer>
 </body>
 
 </html>

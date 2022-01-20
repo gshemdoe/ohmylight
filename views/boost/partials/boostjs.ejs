@@ -20,7 +20,7 @@
 
             //update points board
             pointDisplay.innerText = data.points
-            tgusername.innerText = data.name
+            tgusername.innerText = data.name.substring(0, 16)
             modalPtsBalance.innerText = data.points
             tginfo.style.display = 'block'
             nottginfo.style.display = 'none'

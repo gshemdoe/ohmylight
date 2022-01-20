@@ -1,0 +1,41 @@
+<script>
+    const understood = document.querySelectorAll('.understood')
+    const pointDisplay = document.getElementById('points-display')
+    const tgusername = document.querySelector('.tgusername')
+    const modalPtsBalance = document.getElementById('modalPtsBalance')
+    const nottginfo = document.querySelector('.nottginfo')
+    const tginfo = document.querySelector('.tginfo')
+    const understoodbtn = document.querySelector('.understoodbtn')
+
+    async function boosting(e) {
+        let newNano = e
+
+        try {
+            let res = await fetch(`/ohmy-user-add-1/${e}`, {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' }
+            })
+            let data = await res.json()
+            //console.log(data)
+
+            //update points board
+            pointDisplay.innerText = data.points
+            tgusername.innerText = data.name
+            modalPtsBalance.innerText = data.points
+            tginfo.style.display = 'block'
+            nottginfo.style.display = 'none'
+            understoodbtn.innerHTML = '<b>✔ Add More Points</b>'
+
+            understood.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    window.location.reload()
+                })
+            })
+        } catch (err) {
+            let errorWindow = window.open("")
+            errorWindow.document.write(err.message + "<br></h3><h3>Error! Failed to add points, session expired, try again after few minutes</h3>")
+            console.log(err.message)
+        }
+    }
+
+</script>

@@ -7,15 +7,9 @@
         box-sizing: border-box;
     }
 
-    html {
-        width: 380px;
-        margin: 0 auto;
-        background-color: black;
-    }
-
     body {
         background-color: aliceblue;
-        margin: 0;
+        margin: 0 auto;
         width: 360px;
     }
 
@@ -89,8 +83,8 @@
     }
 
     .points-body .points-circle .name {
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
+        border-top-left-radius: 30%;
+        border-top-right-radius: 30%;
         padding-top: 8px;
     }
 
@@ -155,5 +149,48 @@
         text-align: center;
         margin: 24px auto;
         border-radius: 8px;
+    }
+
+    .tginfo {
+        width: 90%;
+        text-align: center;
+        margin: auto;
+        display: none;
+    }
+
+    .nottginfo {
+        width: 90%;
+        text-align: center;
+        margin: auto;
+        font-size: 36px;
+    }
+
+    .tginfo .cong {
+        color: green;
+    }
+
+    @media (min-width: 420px) and (max-width: 2048px) {
+        body {
+            width: 410px;
+            margin: 0 auto;
+        }
+
+        .points-body .points-circle {
+            width: 320px;
+            height: 320px;
+        }
+
+        .points-body .points-circle .pts {
+            margin: 12px auto 24px auto;
+        }
+
+        .points-body .points-circle .pts-your {
+            margin-top: 16px;
+        }
+
+        .points-body .points-circle .name {
+            width: 80%;
+        }
+
     }
 </style>

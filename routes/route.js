@@ -120,7 +120,19 @@ router.get('/ohmy-user-add-1/:unano/:chatid', (req, res) => {
             let newNano = `user${randomNo}`
 
             user.updateOne({ unano: newNano, points: (user.points + 1) }).then(() => {
-                res.redirect(`/boost/${user.chatid}/add`)
+                // res.redirect(`/boost/${user.chatid}/add`)
+                usersModel.findOne({ chatid }).then((updatedUser) => {
+                    let points = updatedUser.points
+                    let name = updatedUser.name
+
+                    let homeLink = `/boost/${user.chatid}/add`
+                    let obj = {
+                        link: homeLink,
+                        points: points,
+                        name: name
+                    }
+                    res.send(obj)
+                })
                 if (user.points == 1) {
                     bot.telegram.sendMessage(chatid, `You increased your points by 1 and your new points balance is <b>${user.points + 1} pts</b> \n\nNow you are able to download the video`, {
                         parse_mode: 'HTML',

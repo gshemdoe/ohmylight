@@ -43,11 +43,16 @@
             <h3 class="name" style="font-style: normal;"><b>
                     😁 <%= userInfo.name.substring(0,16) %>
                 </b></h3>
+            <br>
             <h4 class="pts-your">Your Points</h4>
             <h1 class="pts" id="points-display">
-                <%= userInfo.points %> pts.
+                <span class="ptsxl" style="font-size: 48px;">
+                    <%= userInfo.points %>
+                </span> pts.
             </h1>
+            <br>
             <hr style="width: 50%; margin: 4px auto; color: black;">
+            <br>
             <h4 class="status">
                 <%= (userInfo.points>=2) ? 'Able to get videos' : 'Not able to get videos' %>
             </h4>

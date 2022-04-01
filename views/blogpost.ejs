@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oh My! World</title>
-    <%- include('./partials/home-style'); %>
+    <%- include('./partials/blogstyle.ejs'); %>
         <%- include ('./partials/ads.ejs'); %>
 </head>
 
@@ -24,19 +24,17 @@
     <div class="main">
         <section class="left">
             <div class="posts">
-                <% posts.forEach(post=> { %>
-                    <div class="post" onclick="window.open(`/blog/<%= post.nano %>`, `_self`)">
-                        <h1 class="phead">
-                            <%= post.title %>
-                        </h1>
-                        <img src="<%= post.picha %> " alt="">
-                        <div class="pbody">
-                            <%- post.body.substring(0,500) %>...
-                        </div>
-                        <h3 style="text-align: left; color: red; font-weight: bold; padding-left: 8px;">Read More...
-                        </h3>
+                <div class="post">
+                    <div class="phead">
+                      <%= post.title %> 
                     </div>
-                    <% }) %>
+                    <div class="img">
+                        <img src="<%= post.picha %> " alt="<%= post.title %> picture">
+                    </div>
+                    <div class="pbody">
+                      <%- post.body %> 
+                    </div>
+                </div>
             </div>
         </section>
         <section class="right">
@@ -51,7 +49,7 @@
                     </li>
                     <li>Active users: <%= count.toLocaleString() %>
                     </li>
-                    <li>Page Views: <%= doc.times.toLocaleString() %>
+                    <li>Page Views: <%= doc[0].times.toLocaleString() %>
                     </li>
                 </ul>
             </div>

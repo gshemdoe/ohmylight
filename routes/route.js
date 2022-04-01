@@ -9,8 +9,8 @@ const countModel = require('../models/count')
 const { nanoid } = require('nanoid')
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
-router.get('/', (req, res) => {
-    blogModel.find().limit(6).then(async (posts) => {
+router.get('/', async (req, res) => {
+    blogModel.find().limit(6).sort('-createdAt').then(async (posts) => {
         let count = await usersModel.countDocuments()
         let files = await ohmyModel.countDocuments()
         countModel.findOne({}).then(doc => {
@@ -175,5 +175,25 @@ router.get('/ohmy-user-add-1/:unano/:chatid', (req, res) => {
         bot.telegram.sendMessage(741815228, err.message)
     })
 })
+
+router.get('/blog/:nano', async (req, res) => {
+    try {
+        const nano = req.params.nano
+
+        let post = await blogModel.findOne({ nano })
+        let count = await usersModel.countDocuments()
+        let files = await ohmyModel.countDocuments()
+        let doc = await countModel.find()
+
+        res.render('blogpost', { post, count, files, doc})
+    }
+    catch (err) {
+        console.log(err)
+        res.send(err.message)
+    }
+
+})
+
+router.get('/favicon.ico', (req, res) => res.status(204));
 
 module.exports = router
